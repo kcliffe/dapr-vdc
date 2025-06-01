@@ -1,6 +1,4 @@
 using Dapr.Workflow;
-using System.Net;
-using Microsoft.Extensions.Logging;
 using WriterWorkflow.Activities;
 using WriterWorkflow.Models;
 using writer_workflow;

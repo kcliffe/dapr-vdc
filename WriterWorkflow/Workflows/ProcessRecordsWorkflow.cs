@@ -1,5 +1,4 @@
 using Dapr.Workflow;
-using Microsoft.Extensions.Logging;
 using WriterWorkflow.Models;
 
 namespace WriterWorkflow.Workflows;

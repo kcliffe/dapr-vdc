@@ -1,9 +1,7 @@
 using Dapr.Workflow;
 using System.Net;
-using Microsoft.Extensions.Logging;
 using WriterWorkflow.Models;
 using WriterWorkflow.Activities;
-using WriterWorkflow.Models;
 
 namespace WriterWorkflow.Workflows;
 
@@ -104,10 +102,12 @@ public class ProcessSingleRecordWorkflowWithLoop : Workflow<ProcessRecordWorkflo
     // Helper method to calculate exponential delay for non-transient retries
     private static TimeSpan CalculateRetryDelay(int currentFailCount)
     {
+        return TimeSpan.FromSeconds(5); // For debugging, use a short delay
+        
         // Example: 1st retry: 30s, 2nd: 60s, 3rd: 120s
-        if (currentFailCount == 1) return TimeSpan.FromMinutes(10);
-        if (currentFailCount == 2) return TimeSpan.FromMinutes(20);
-        if (currentFailCount == 3) return TimeSpan.FromMinutes(30);
-        return TimeSpan.FromMinutes(5); // Default for safety, should not be hit if MaxFailCount is 3
+        // if (currentFailCount == 1) return TimeSpan.FromMinutes(10);
+        // if (currentFailCount == 2) return TimeSpan.FromMinutes(20);
+        // if (currentFailCount == 3) return TimeSpan.FromMinutes(30);
+        // return TimeSpan.FromMinutes(5); // Default for safety, should not be hit if MaxFailCount is 3
     }
 }

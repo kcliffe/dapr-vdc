@@ -4,3 +4,7 @@ Test:
  - Happy path
  - Transient
  - Non Transient
+
+ Apssettings for debug level
+
+ Mock API!

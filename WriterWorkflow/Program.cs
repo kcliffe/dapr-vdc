@@ -1,15 +1,11 @@
 ﻿// Program.cs
 using Dapr.Workflow;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 using WriterWorkflow.Workflows;
 using WriterWorkflow.Activities;
 
-var host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices(services =>
-    {
-        services.AddSingleton(new HttpClient()); // Or use IHttpClientFactory
-        services.AddDaprWorkflow(options =>
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDaprWorkflow(options =>
         {
             // Register Workflows
             options.RegisterWorkflow<ProcessRecordsWorkflow>();
@@ -21,7 +17,11 @@ var host = Host.CreateDefaultBuilder(args)
             options.RegisterActivity<UpdateRecordStatusActivity>();
             // options.RegisterActivity<FetchRecordsActivity>(); // If you create a separate activity for fetching
         });
-    })
-    .Build();
 
-host.Run();
+if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DAPR_GRPC_PORT")))
+{
+    Environment.SetEnvironmentVariable("DAPR_GRPC_PORT", "50001");
+}
+
+var app = builder.Build();
+app.Run();

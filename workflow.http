@@ -13,6 +13,7 @@ http://localhost:3500/v1.0/healthz
 POST {{dapr_url}}/v1.0/workflows/dapr/ProcessRecordsWorkflow/start?instanceID={{workflow_id}}
 Content-Type: application/text/plain
 
+"This is a test message for the workflow. It should be processed by the Writer workflow."
 
 ### Get status for Writer workflow
 @workflow_writer_id_response={{wfrequest.response.body.instanceID}}

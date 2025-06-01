@@ -3,7 +3,7 @@ common:
   resourcesPath: ./components
 apps:
   - appID: writer-workflow
-    appDirPath: ./WriterWorkflow/
+    appDirPath: ./WriterWorkflow
     appPort: 5065
     daprHTTPPort: 3500
     appLogDestination: console

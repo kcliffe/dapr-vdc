@@ -1,6 +1,5 @@
 using Dapr.Workflow;
 using System.Net;
-using Microsoft.Extensions.Logging;
 using WriterWorkflow.Models;
 using System.Text.Json;
 using System.Text;
