@@ -1,0 +1,19 @@
+@dapr_url=http://localhost:3500
+@workflow_id={{$guid}}
+
+###
+### Health check for Dapr
+###
+http://localhost:3500/v1.0/healthz
+
+###
+### Run Writer workflow
+###
+// @name wfrequest
+POST {{dapr_url}}/v1.0/workflows/dapr/ProcessRecordsWorkflow/start?instanceID={{workflow_id}}
+Content-Type: application/text/plain
+
+
+### Get status for Writer workflow
+@workflow_writer_id_response={{wfrequest.response.body.instanceID}}
+GET {{dapr_url}}/v1.0/workflows/dapr/{{workflow_writer_id_response}}

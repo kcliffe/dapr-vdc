@@ -1,0 +1,6 @@
+Workflow.SetCustomStatus
+
+Test:
+ - Happy path
+ - Transient
+ - Non Transient

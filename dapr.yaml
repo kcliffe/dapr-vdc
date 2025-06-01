@@ -1,0 +1,11 @@
+version: 1
+common:
+  resourcesPath: ./components
+apps:
+  - appID: writer-workflow
+    appDirPath: ./WriterWorkflow/
+    appPort: 5065
+    daprHTTPPort: 3500
+    appLogDestination: console
+    daprdLogDestination: console
+    command: ["dotnet", "run"]
