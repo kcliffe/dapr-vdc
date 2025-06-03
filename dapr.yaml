@@ -9,3 +9,7 @@ apps:
     appLogDestination: console
     daprdLogDestination: console
     command: ["dotnet", "run"]
+  - appID: vbill-api
+    appDirPath: ./Services/FakeVBillApi
+    appPort: 5113
+    command: ["dotnet", "run"]

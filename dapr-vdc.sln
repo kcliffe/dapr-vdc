@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriterWorkflow", "WriterWorkflow\writer-workflow.csproj", "{FC982F81-F9D4-47B1-A387-4E41C176A618}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{187DACCD-E805-415B-AFD2-099A303B3D09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeVbillApi", "Services\FakeVbillApi\FakeVbillApi.csproj", "{58325DEE-0DFC-4EF5-85A1-542F9B46DFFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,12 @@ Global
 		{FC982F81-F9D4-47B1-A387-4E41C176A618}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC982F81-F9D4-47B1-A387-4E41C176A618}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC982F81-F9D4-47B1-A387-4E41C176A618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58325DEE-0DFC-4EF5-85A1-542F9B46DFFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58325DEE-0DFC-4EF5-85A1-542F9B46DFFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58325DEE-0DFC-4EF5-85A1-542F9B46DFFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58325DEE-0DFC-4EF5-85A1-542F9B46DFFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{58325DEE-0DFC-4EF5-85A1-542F9B46DFFB} = {187DACCD-E805-415B-AFD2-099A303B3D09}
 	EndGlobalSection
 EndGlobal

@@ -1,19 +1,16 @@
 using Dapr.Workflow;
 using System.Net;
 using WriterWorkflow.Models;
-using System.Text.Json;
-using System.Text;
+using Dapr.Client;
 
 namespace WriterWorkflow.Activities;
 
 public class PostRecordActivity : WorkflowActivity<RecordToProcess, PostApiResult>
 {
-    private readonly HttpClient _httpClient; // Inject your HttpClient
     private readonly ILogger<PostRecordActivity> _logger;
 
-    public PostRecordActivity(HttpClient httpClient, ILogger<PostRecordActivity> logger)
+    public PostRecordActivity(ILogger<PostRecordActivity> logger)
     {
-        _httpClient = httpClient;
         _logger = logger;
     }
 
@@ -23,9 +20,8 @@ public class PostRecordActivity : WorkflowActivity<RecordToProcess, PostApiResul
 
         try
         {
-            // Simulate API call
-            var content = new StringContent(JsonSerializer.Serialize(record.Data), Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await _httpClient.PostAsync("https://external-api.com/records", content);
+            var client = DaprClient.CreateInvokeHttpClient(appId: "vbill-api");
+            var response = await client.PostAsJsonAsync("/submit-cdr", new { record.Data }, CancellationToken.None);
 
             if (response.IsSuccessStatusCode)
             {

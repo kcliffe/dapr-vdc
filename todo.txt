@@ -1,0 +1,22 @@
+Arch:
+ - Define levels of adoption
+ - Create Level 1 (full adoption) proto
+   - Includes:
+     - Internal non-Transient (or longer term transient) retry using Timers
+     - Clients as services?
+ 
+Investigate:
+ - Workflow.SetCustomStatus
+
+Test:
+ - Happy path
+ - Transient
+ - Non Transient
+
+ Apssettings for debug level
+
+Thoughts: 
+- Level 1
+    - Workflow takes list of id, state. Can start a workflow from any status. So can be used to replay all metric states if required.
+    - Proxy APi in front of Workflow to handle accepting metric "queries" and hydrating records for workflow
+- Services - how micro servicey do we want to be?

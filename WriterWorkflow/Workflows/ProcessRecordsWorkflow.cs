@@ -34,13 +34,11 @@ public partial class ProcessRecordsWorkflow : Workflow<object, bool> // Input an
         {
             // Simulate fetching records from DB
             // recordsToProcess = await _recordDataService.GetRecordsByStatusAndFailCount("Created", 3);
-            recordsToProcess =
-            [
-                new("rec1", "data1", 0, "Created"),
-                new("rec2", "data2", 1, "Created"), // Will be retried
-                new("rec3", "data3", 3, "Created"), // Will be retried
-                new("rec4", "data4", 4, "Created"), // Will be skipped/marked failed
-            ];
+            recordsToProcess = [.. Enumerable.Range(1, 10).Select(i => new RecordToProcess(
+                $"rec_{i}",
+                $"data{i}"
+            ))];
+           
             LogRecordsToProcess(logger, recordsToProcess.Count);
         }
         catch (Exception ex)

@@ -1,0 +1,11 @@
+@FakeVbillApi_HostAddress = http://localhost:5113
+
+POST {{FakeVbillApi_HostAddress}}
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Data": "Hello from FakeVbillApi"
+}
+
+###
