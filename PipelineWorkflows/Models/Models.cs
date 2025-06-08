@@ -1,4 +1,4 @@
-namespace WriterWorkflow.Models;
+namespace PipelineWorkflows.Models;
 
 public record RecordToProcess(string Id, string Data, int FailCount = 0, string Status = "Created");
 public record PostApiResult(bool IsSuccess, int StatusCode, string ErrorMessage);

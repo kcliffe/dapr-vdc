@@ -9,10 +9,10 @@ app.UseHttpsRedirection();
 app.MapPost("/submit-cdr", (NewCdrRequest request) =>
 {
     // 30% chance of failure
-    if (new Random().NextDouble() < 0.3)
-    {
-        return Results.StatusCode((int)HttpStatusCode.ServiceUnavailable);
-    }
+    // if (new Random().NextDouble() < 0.3)
+    // {
+    //     return Results.StatusCode((int)HttpStatusCode.ServiceUnavailable);
+    // }
 
     return Results.Ok(new
     {

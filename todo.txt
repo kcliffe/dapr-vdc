@@ -9,8 +9,8 @@ Investigate:
  - Workflow.SetCustomStatus
 
 Test:
- - Happy path
- - Transient
+ - 😀 Happy path
+ - 😀 Transient
  - Non Transient
 
  Apssettings for debug level

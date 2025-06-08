@@ -1,0 +1,8 @@
+cd PipelineWorkflows
+dapr run --app-id writer-workflow --app-port 5065 --dapr-http-port 3500 --resources-path=../components -- dotnet run
+
+cd Services\FakeVbillApi
+dapr run --app-id vbill-api --app-port 5113 --dapr-http-port 3501 -- dotnet run
+
+cd Datasources\FakeVhi
+dapr run --app-id vhi-datasource --app-port 5114 --dapr-http-port 3502 --resources-path ../../components -- dotnet run

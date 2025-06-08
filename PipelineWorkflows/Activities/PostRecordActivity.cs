@@ -1,9 +1,9 @@
 using Dapr.Workflow;
 using System.Net;
-using WriterWorkflow.Models;
+using PipelineWorkflows.Models;
 using Dapr.Client;
 
-namespace WriterWorkflow.Activities;
+namespace PipelineWorkflows.Activities;
 
 public class PostRecordActivity : WorkflowActivity<RecordToProcess, PostApiResult>
 {

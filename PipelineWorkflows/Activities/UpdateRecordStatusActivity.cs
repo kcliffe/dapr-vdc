@@ -1,7 +1,7 @@
 using Dapr.Workflow;
-using WriterWorkflow.Models;
+using PipelineWorkflows.Models;
 
-namespace WriterWorkflow.Activities;
+namespace PipelineWorkflows.Activities;
 
 public class UpdateRecordStatusActivity : WorkflowActivity<RecordToProcess, bool>
 {

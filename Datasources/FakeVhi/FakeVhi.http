@@ -1,0 +1,6 @@
+@FakeVhi_HostAddress = http://localhost:5114
+
+GET {{FakeVhi_HostAddress}}?uniqueIndex=5
+Accept: application/json
+
+###

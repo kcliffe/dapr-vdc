@@ -1,9 +1,9 @@
 using Dapr.Workflow;
 using System.Net;
-using WriterWorkflow.Models;
-using WriterWorkflow.Activities;
+using PipelineWorkflows.Models;
+using PipelineWorkflows.Activities;
 
-namespace WriterWorkflow.Workflows;
+namespace PipelineWorkflows.Workflows;
 
 public class ProcessSingleRecordWorkflowWithLoop : Workflow<ProcessRecordWorkflowInput, ProcessRecordWorkflowOutput>
 {

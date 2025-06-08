@@ -3,13 +3,18 @@ common:
   resourcesPath: ./components
 apps:
   - appID: writer-workflow
-    appDirPath: ./WriterWorkflow
+    appDirPath: ./PipelineWorkflows
     appPort: 5065
     daprHTTPPort: 3500
     appLogDestination: console
     daprdLogDestination: console
     command: ["dotnet", "run"]
-  - appID: vbill-api
-    appDirPath: ./Services/FakeVBillApi
-    appPort: 5113
-    command: ["dotnet", "run"]
+  # - appID: vbill-api
+  #   appDirPath: ./Services/FakeVBillApi
+  #   appPort: 5113
+  #   command: ["dotnet", "run"]
+  # - appID: vhi-datasource
+  #   appDirPath: ./Datasources/FakeVhi
+  #   appPort: 5114
+  #   command: [ "dotnet", "run" ]
+
